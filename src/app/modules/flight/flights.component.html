@@ -1,0 +1,38 @@
+<div class="image-grid">
+  <div class="message" *ngIf="messageSuccess">{{ messageSuccess }}</div>
+  <div class="message error" *ngIf="messageError">{{ messageError }}</div>
+  <div class="loading-spinner" *ngIf="loading"></div>
+
+  <div class="search-container">
+    <app-search (searchEvent)="filterFlights($event)"></app-search>
+  </div>
+
+  <div class="flight-cards">
+    <div *ngFor="let flight of flights">
+      <div class="flight-card">
+        <div class="flight-details">
+          <div class="flight-info">
+            <h2>{{ flight.airline }}</h2>
+            <p class="flight-number">{{ flight.flight_number }}</p>
+            <p class="aircraft-type">{{ flight.aircraft_type }}</p>
+            <p class="service-class">{{ flight.service_class }}</p>
+          </div>
+          <div class="flight-date">
+            <p>{{ flight.origin_city.name }} &#8594; {{ flight.destination_city.name }}</p>
+            <p class="going-date-time">Fecha vuelo de ida: {{ flight.going_date_time | date: 'MMM dd, yyyy HH:mm' }}</p>
+            <p *ngIf="flight.round_trip" class="return-date-time">
+              Fecha vuelo de vuelta: {{ flight.return_date_time | date: 'MMM dd, yyyy HH:mm' }}
+            </p>
+            <p *ngIf="!flight.round_trip" class="return-date-time">
+              No aplica, este vuelo es solamente de ida.
+            </p>
+          </div>
+        </div>
+        <div class="flight-price">
+          <p class="total-amount">Total: {{ flight.total_amount | currency: 'COP':'symbol':'1.0-0' }}</p>
+          <button class="reserve-button" [routerLink]="['/flights/reservation', flight.id]">Reservar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

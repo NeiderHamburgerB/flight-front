@@ -1,0 +1,27 @@
+:root {
+    --color-primary: #2196F3;
+    /* Color principal */
+    --color-secondary: #f1c40f;
+    /* Color secundario */
+    --background-color: #f0f0f0;
+    /* Color de fondo general */
+}
+
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.app__subtitle{
+    text-align: center;
+}
+
+.message {
+    color: green;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.message.error {
+    color: red;
+}

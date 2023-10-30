@@ -1,0 +1,33 @@
+<div class="create-form">
+  <div class="message" *ngIf="messageSuccess">{{ messageSuccess }}</div>
+  <div class="message error" *ngIf="messageError">{{ messageError }}</div>
+  <div class="loading-spinner" *ngIf="loading"></div>
+
+  <div class="reservation-info">
+    <h2>Información de la Reservación</h2>
+    <p><strong>Aerolínea:</strong> {{ flight?.airline }}</p>
+    <p><strong>Tipo de Avión:</strong> {{ flight?.aircraft_type }}</p>
+    <p><strong>Número de Vuelo:</strong> {{ flight?.flight_number }}</p>
+    <p><strong>Fecha y Hora de Ida:</strong> {{ flight?.going_date_time | date: 'MMM dd, yyyy HH:mm' }}</p>
+    <p *ngIf="flight?.round_trip"><strong>Fecha y Hora de Vuelta:</strong>{{ flight?.return_date_time | date: 'MMM dd,
+      yyyy HH:mm' }}</p>
+    <p><strong>Clase de Servicio:</strong> {{ flight?.service_class }}</p>
+    <p><strong>Total:</strong> {{ flight?.total_amount | currency:'COP':'symbol-narrow':'1.2-2' }}</p>
+  </div>
+
+  <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="email">Correo Electrónico</label>
+      <input type="email" id="email" formControlName="email" placeholder="correo@ejemplo.com">
+      <div *ngIf="createForm.get('email')?.hasError('required') && createForm.get('email')?.touched">
+        El correo electrónico es obligatorio.
+      </div>
+      <div *ngIf="createForm.get('email')?.hasError('email') && createForm.get('email')?.touched">
+        Ingresa una dirección de correo electrónico válida.
+      </div>
+      <input type="hidden" formControlName="flight_id" [value]="id" id="hiddenId">
+    </div>
+    <button type="submit">Reservar</button>
+  </form>
+
+</div>

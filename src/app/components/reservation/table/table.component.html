@@ -1,0 +1,26 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Email del cliente</th>
+      <th>Aerolínea</th>
+      <th>Tipo de vuelo</th>
+      <th>Número de vuelo</th>
+      <th>Ciudad de origen</th>
+      <th>Ciudad destino</th>
+      <th>Hora de salida</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of data">
+      <td>{{ item.email }}</td>
+      <td>{{ item.flight.airline }}</td>
+      <td>{{ item.flight.service_class }}</td>
+      <td>{{ item.flight.flight_number }}</td>
+      <td>{{ item.flight.origin_city?.name }}</td>
+      <td>{{ item.flight.destination_city.name }}</td>
+      <td>{{ item.flight.going_date_time }}</td>
+      <td>{{ item.flight.total_amount }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,44 @@
+.create-form {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.create-form h2 {
+  text-align: center;
+  color: #2196F3;
+}
+
+.create-form .form-group {
+  margin: 10px 0;
+}
+
+.create-form label {
+  font-weight: bold;
+  color: #333;
+}
+
+.create-form input {
+  width: 93%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.create-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #2196F3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.create-form button:hover {
+  background-color: #f1c40f;
+}

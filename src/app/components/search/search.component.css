@@ -1,0 +1,57 @@
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f1c40f;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.input-field {
+  border: 1px solid #2196F3;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px 0;
+  width: 100%;
+  transition: border-color 0.3s;
+  margin-right: 2px;
+}
+
+.input-field:focus {
+  border-color: #f1c40f;
+  outline: none;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+button {
+  background: #2196F3;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background: #f1c40f;
+}
+
+.checkbox-label {
+  padding: 10px;
+  margin: 5px 0;
+  width: 90%;
+  color: #4d4d4d;
+
+}
+
+.checkbox-label label {
+  font-weight: bold;
+  color: #2196F3;
+  cursor: pointer;
+}
