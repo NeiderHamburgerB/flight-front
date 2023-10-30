@@ -60,7 +60,7 @@ export class CreateComponent {
           catchError(error => {
             console.error('Error al crear la reserva:', error);
             this.messageSuccess = ''
-            this.messageError = 'Ocurrió un error al intentar crear la reserva';
+            this.messageError = 'Ya reservaste ese viaje, intenta con otro';
             return throwError(() => new Error(error));
           })
         )
